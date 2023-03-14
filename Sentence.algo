@@ -1,0 +1,16 @@
+ALGORITHM Sentence
+VAR
+    chars,words,vowels : STRING;
+BEGIN
+    chars = length(sentence);  // Count the number of letters in a entence
+    words = length(split(sentence));  // Count the number of words in a entences
+    vowels_count =0;
+    FOR char in to_lower(sentence)  DO
+        IF (char in vowels) THEN
+            vowels_count = vowels_count + 1;
+        END_IF 
+    END_FOR
+    RETURN (chars, words, vowels_count);
+END
+    CALL sentence("This is a sample sentence to test the algorithm.")
+OUTPUT: (47, 9, 14)
